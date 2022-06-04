@@ -1,8 +1,13 @@
+import './NavBar.css';
+
 const Logo = () =>{
     return (
 
         
-        <img src="../img/logo.svg"></img>
+         
+          <img className='Logo' src="../img/logo.png" alt="logo ecommerce" />    
+  
+
     )
 }
 
