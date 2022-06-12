@@ -1,7 +1,7 @@
 import Logo from './Logo';
 import  './NavBar.css';
 import CartWidget from './CartWidget';
-
+import { Link, NavLink } from 'react-router-dom'
 
 
 const NavBar = () =>{
@@ -9,29 +9,29 @@ const NavBar = () =>{
 
     <nav  className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid ">
-            <Logo/>
+            <Link to='/'><Logo/></Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul  className="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li className="nav-item fw-bold">
-                    <a className="nav-link" aria-current="page" href="#">Motherboards</a>
+                    <NavLink to='category/Motherboards' className={({ isActive}) => isActive ? 'btn btn-secondary' : 'nav-link'} >Motherboards</NavLink>
                     </li>
                     <li className="nav-item fw-bold">
-                    <a className="nav-link" href="#">Procesadores</a>
+                    <NavLink to='category/Procesadores' className={({ isActive}) => isActive ? 'btn btn-secondary' : 'nav-link'} >Procesadores</NavLink>
                     </li>
                     <li className="nav-item fw-bold">
-                    <a className="nav-link" href="#">Discos</a>
+                    <NavLink to='category/Discos' className={({ isActive}) => isActive ? 'btn btn-secondary' : 'nav-link'} >Discos</NavLink>
                     </li>
                     <li className="nav-item fw-bold">
-                    <a className="nav-link" href="#">Memorias</a>
+                    <NavLink to='category/Memorias' className={({ isActive}) => isActive ? 'btn btn-secondary' : 'nav-link'} >Memorias</NavLink>
                     </li>
                     <li className="nav-item fw-bold">
-                    <a className="nav-link" href="#">Fuentes</a>
+                    <NavLink  to='category/Fuentes' className={({ isActive}) => isActive ? 'btn btn-secondary' : 'nav-link'} >Fuentes</NavLink>
                     </li>
                     <li className="nav-item fw-bold">
-                    <a className="nav-link" href="#">Gabinetes</a>
+                    <NavLink to='category/Gabinetes' className={({ isActive}) => isActive ? 'btn btn-secondary' : 'nav-link'} >Gabinetes</NavLink>
                     </li>
                             
                 </ul>            

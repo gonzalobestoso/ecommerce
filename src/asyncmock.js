@@ -1,6 +1,6 @@
 const productos = [
     {
-        cod: 1,
+        id: "1",
         marca: "Asus",
         modelo: "Prime A320m-k",
         descripcion: "Am4 Ddr4 A320 Hdmi M2",
@@ -12,7 +12,7 @@ const productos = [
 
     },
     {
-        cod: 2,
+        id: "2",
         marca: "AMD",
         modelo: "Ryzen 5 5600G",
         descripcion: "6 núcleos y 4.4GHz de frecuencia con gráfica integrada",
@@ -24,18 +24,18 @@ const productos = [
 
     },
     {
-        cod: 3,
+        id: "3",
         marca: "Kingston",
         modelo: "SA400S37",
         descripcion: "480G 480GB negro",
         precio: 7899,
-        categoria: "Almacenamiento",
+        categoria: "Discos",
         img: '/img/kingston_SA400S37.png',
         stock: 20
         
     },
     {
-        cod: 4,
+        id: "4",
         marca: "Kingston",
         modelo: "Fury Renegade",
         descripcion: "DDR4 8GB",
@@ -45,7 +45,7 @@ const productos = [
         stock: 10
     },
     {
-        cod: 5,
+        id: "5",
         marca: "Reddragon",
         modelo: "RPGS GC-PS002",
         descripcion: "600W negra 100V/240V",
@@ -55,7 +55,7 @@ const productos = [
         stock: 12
     },
     {
-        cod: 6,
+        id: "6",
         marca: "Netmak",
         modelo: "Nmx100",
         descripcion: "Atx Retroiluminado",
@@ -70,8 +70,23 @@ export const getProductos = () =>{
     return new Promise((resolve, reject) =>{
         setTimeout(()=>{
             resolve(productos)
-        }, 2000)
+        }, 200)
     } ) 
+}
 
+export const getProductosById = (id) =>{
+    return new Promise((resolve, reject) =>{
+        setTimeout(()=>{
+            resolve(productos.find(producto => producto.id === id))
+        }, 100)
+    } ) 
+}
+
+export const getProductosByCategoria = (categoryId) =>{
+    return new Promise((resolve, reject) =>{
+        setTimeout(()=>{
+            resolve(productos.filter(producto => producto.categoria === categoryId))
+        }, 100)
+    } ) 
 }
 
