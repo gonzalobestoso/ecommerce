@@ -7,14 +7,25 @@ const ItemDetailContainer = () => {
 
     const [producto, setProducto] = useState()
     const { IdProducto }  = useParams()
+    const [loading, setLoading] = useState(true)
     
        
 
-    useEffect(() =>{
+    useEffect(() =>{        
         getProductosById(IdProducto).then(response => {
             setProducto(response)
+        }).finally(() =>{
+            setLoading(false)
         })
     }, [])
+
+    if(loading){
+        return (
+            <div className="spinner-border mt-3" role="status">
+             <span className="visually-hidden">Cargando...</span>
+            </div>
+        )
+    }
 
     
 
