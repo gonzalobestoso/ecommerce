@@ -1,10 +1,14 @@
-### Proyecto Ecommerce para curso de ReactJs en Coderhouse
+## Proyecto Ecommerce para curso de ReactJs en Coderhouse
 Creada con ReactJs, esta tienda virtual de componentes para pc y accesorios tecnológicos varios, permite navegar entre diferentes categorias y ver sus detalles.\
 Se utiliza Bootstrap 5 para los estilos visuales.
 
 ## Previsualización
 
 ![](https://github.com/gonzalobestoso/ecommerce/blob/main/ecommerce.gif)
+
+
+## Instalaciones necesarias
+Se debe instalar npm (Node Package Manager) para el correcto funcionamiento de la app
 
 ## Scripts disponibles
 
