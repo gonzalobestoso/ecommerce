@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from "./Button";
 
 
-const CounterStock = ( {initial, stock }) => {    
+const CounterStock = ( { onAdd, initial=1, stock }) => {    
 
     const [count, setCount] = useState(initial)
 
@@ -17,12 +17,18 @@ const CounterStock = ( {initial, stock }) => {
     
 
     return(
+        <>
         <div>
-        <Button funcion={decrement} label='-'/> 
-        <span className="fw-bold"> {count} </span> 
-        <Button funcion={increment} label='+'/>
+            <Button funcion={decrement} label='-'/> 
+            <span className="fw-bold"> {count}  </span> 
+            <Button funcion={increment} label='+'/> 
+                    
+        </div> 
+        <div style={{margin: 10}}>
+            <Button funcion={() => onAdd(count)} label='Agregar al Carrito' />  
         </div>
-  
+        </>       
+
     )
     }
 

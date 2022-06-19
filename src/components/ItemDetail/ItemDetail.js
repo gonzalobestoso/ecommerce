@@ -1,8 +1,21 @@
 import { Link } from 'react-router-dom'
 import CounterStock from './CounterStock'
+import { useState, useContext } from 'react'
+import CartContext from '../../context/CartContext'
 
 
-const ItemDetail = ( {img, marca, modelo, descripcion, stock}) =>{
+const ItemDetail = ( {id, img, marca, modelo, descripcion, stock, precio}) =>{
+   
+    const { addItem } = useContext(CartContext)
+    const [ quantityAdded, setQuantityAdded] =  useState(0)
+
+    const handleOnAdd = (quantity) =>{
+        console.log(quantity)
+        addItem({id, marca, modelo, precio, quantity})
+        setQuantityAdded(quantity)
+    }   
+   
+
     return (
         
         <div className='col-6 mt-3 mx-auto'>
@@ -12,9 +25,18 @@ const ItemDetail = ( {img, marca, modelo, descripcion, stock}) =>{
                     <h3 className="card-title">{marca}</h3>
                     <h5 className="card-title">{modelo}</h5>
                     <p className="card-text">{descripcion}</p>
-                    
-                    <CounterStock initial={1} stock={stock}/>
+                    <p className="card-text fw-bold"> ${precio} </p>
                 </div>
+                {quantityAdded === 0
+                    
+                    ? <CounterStock onAdd={handleOnAdd} stock={stock} />
+                    : 
+                    <>
+                    <Link to='/' className='btn btn-dark' style={{margin: 5}}> Seguir Comprando </Link> 
+                    <Link to='/cart' className='btn btn-dark' style={{margin: 5}}> Terminar Compra </Link> 
+                    </>
+                }               
+
             </div>
             <Link to='/' className="btn btn-outline-dark mb-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-90deg-left" viewBox="0 0 16 16">
