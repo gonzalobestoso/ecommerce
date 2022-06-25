@@ -26,6 +26,8 @@ export const CartProvider = ({ children }) =>{
         return totalQuantity
         
     }
+
+    
     
 
     return(
