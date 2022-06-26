@@ -10,7 +10,7 @@ const ItemDetail = ( {id, img, marca, modelo, descripcion, stock, precio}) =>{
     const [ quantityAdded, setQuantityAdded] =  useState(0)
 
     const handleOnAdd = (quantity) =>{
-        console.log(quantity)
+        
         addItem({id, marca, modelo, precio, quantity})
         setQuantityAdded(quantity)
     }   
