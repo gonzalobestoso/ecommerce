@@ -1,8 +1,8 @@
 import { useContext } from "react"
 import CartContext from "../../../context/CartContext"
-import Button from "../../ItemDetail/Button"
+import GenericButton from "../../GenericButton"
 
-const ItemCart = ( { marca, modelo, descripcion, precio}) => {
+const ItemCart = ( { marca, modelo,  precio, img}) => {
 
     const { removeItem, getCartQuantity } = useContext(CartContext)
 
@@ -11,13 +11,13 @@ const ItemCart = ( { marca, modelo, descripcion, precio}) => {
 
         <div className="card  mb-3">
             <div className="hstack gap-2">
-                <div className=" border">{marca}</div>
-                <div className=" border">{modelo}</div>
-                <div className=" border">${precio}</div>
-                <div className=" border ">Cantidad: {quantity}</div>
+                <div className=" fw-bold mx-auto">{marca}</div>
+                <div className=" fw-bold mx-auto">{modelo}</div>
+                <div className=" fw-bold mx-auto">${precio}</div>
+                <div className=" fw-bold mx-auto ">Cantidad: {quantity}</div>
                 <div className="vr ms-auto"></div>
                 <div className=" border fw-bold ">Total: ${(precio*quantity)} </div>
-                <Button funcion={removeItem} label="Eliminar" />
+                <GenericButton funcion={removeItem} clases="btn btn-danger m-3" type="button" label="Eliminar" />
             </div> 
                 
                 

@@ -1,10 +1,10 @@
 import { useContext } from "react"
 import CartContext from "../../../context/CartContext"
 import ItemCart from "../ItemCart/ItemCart" 
-import Button from "../../ItemDetail/Button"
+import GenericButton from "../../GenericButton"
 
 const ItemCartContainer = () =>{
-    const { cart, getCartQuantity, removeItem  } = useContext(CartContext)
+    const { cart, getCartQuantity, clearCart  } = useContext(CartContext)
     
     const quantity = getCartQuantity()
 
@@ -15,16 +15,13 @@ const ItemCartContainer = () =>{
 
     return (
         <>
-            <h1>Carrito</h1>
-            <div>
+            <h1>Carrito</h1>         
 
-                 {cart.map(producto => <ItemCart key={producto.id} {... producto} />  )}
-                
-            </div>
+            {cart.map(producto => <ItemCart key={producto.id} {... producto}  />  )}
+           
+            <GenericButton funcion={clearCart} clases="btn btn-danger m-3" type="button" label="Vaciar Carrito" />
+            <GenericButton funcion={()=>{console.log("orden generada")}} clases="btn btn-success" type="button" label="Generar Orden" />
 
-            <Button funcion={removeItem} label="Vaciar Carrito" />
-            <Button funcion={(console.log("Orden generada"))} label="Generar Orden" />
-        
         </>
     )
 }
