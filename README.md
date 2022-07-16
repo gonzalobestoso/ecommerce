@@ -24,6 +24,10 @@ La pagina se recargará al hacer cambios.
 Construye la app para ponerla en produccion en la carpeta `build`.\
 Se empaqueta la app  y optimiza para obtener la mejor performance.
 
+### `GB-Ecommerce`
+
+Este proyecto permite comprar productos definidos por categorias. Todo está almacenado en una base de datos en Firebase
+
 
 
 
