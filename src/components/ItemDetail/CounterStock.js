@@ -1,8 +1,18 @@
 import { useState } from "react";
 import Button from "./Button";
+import swal from "sweetalert";
+
 
 
 const CounterStock = ( { onAdd, initial=1, stock }) => {    
+
+    const showProductoAgregado = () =>{
+        swal({
+            title: "Producto agregado correctamente",
+            icon: "success",
+            timer: 2000
+        })
+    }
 
     const [count, setCount] = useState(initial)
 
@@ -25,7 +35,7 @@ const CounterStock = ( { onAdd, initial=1, stock }) => {
                     
         </div> 
         <div style={{margin: 10}}>
-            <Button funcion={() => onAdd(count)} label='Agregar al Carrito' />  
+            <Button funcion={() => {onAdd(count); showProductoAgregado()}} label='Agregar al Carrito' />  
         </div>
         </>       
 

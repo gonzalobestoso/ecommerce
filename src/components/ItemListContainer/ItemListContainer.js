@@ -40,7 +40,7 @@ const ItemListContainer = (props) =>{
     
 
     return(
-        <div className="container">
+        <div className="col-lg-6  mx-auto">
         <h1>{props.greeting}</h1>
         <ItemList productos={productos}/>
         </div>

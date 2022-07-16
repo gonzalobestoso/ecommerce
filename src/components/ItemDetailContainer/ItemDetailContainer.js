@@ -35,9 +35,9 @@ const ItemDetailContainer = () => {
     }    
 
     return(      
-            
+            <div className="col-6 mx-auto">
             <ItemDetail {...producto} />
-       
+            </div>
     )
 }
 
